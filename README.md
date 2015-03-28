@@ -20,7 +20,7 @@ myInterval.pause();
 /* other code here */
 myInterval.resume();
 ```
-A blocking interval can also be interrupted momentarily with a different callback function.
+A blocking interval can also be interrupted momentarily with a different callback function.  
 As with setInterval, this function is also passed `i` - the number of iterations completed.
 ```javascript
 myInterval.interrupt(function(i){
