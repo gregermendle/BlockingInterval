@@ -40,3 +40,6 @@ This will completely reset the blocking interval object back to its initial stat
 #To-do
  - A run time feature would be nice, to track the actual time that the interval has been running
  - Pass additional information to callbacks
+
+#License
+GNU General Public License, V2
