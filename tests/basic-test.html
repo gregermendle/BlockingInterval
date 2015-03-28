@@ -6,6 +6,7 @@
 		<input id="pause" type="button" value="Pause" />
 		<input id="resume" type="button" value="Resume" />
 		<input id="clear-interval" type="button" value="Clear Interval" />
+		<input id="interrupt" type="button" value="Interrupt" />
 		
 		<ul id="interval-list"></ul>
 		
@@ -26,6 +27,15 @@
 			document.getElementById('pause').onclick = function(){myInterval.pause()};
 			document.getElementById('resume').onclick = function(){myInterval.resume()};
 			document.getElementById('clear-interval').onclick = function(){myInterval.clearInterval()};
+			
+			// A simple interrupt test
+			document.getElementById('interrupt').onclick = function(){
+				myInterval.interrupt(function(i){
+					var newNode = document.createElement('li'); // Create a new list item element
+					newNode.innerHTML = 'interrupt at-'+i; // Put some text in it
+					myList.appendChild(newNode); // Add our element to our list
+				});
+			};
 		</script>
 	</body>
 </html>

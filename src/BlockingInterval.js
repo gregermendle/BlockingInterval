@@ -16,7 +16,7 @@
 		/*
 			The current iteration
 		*/
-		bi.i = 0;
+		bi.i = 1;
 	
 		/*
 			Is the interval paused
@@ -54,11 +54,15 @@
 	
 		bi.interrupt = function(callback){
 			if(!bi.blockingIntExists()){
-				console.log("No blocking interval exists!");
+				console.log("No blocking interval currently exists!");
 				return false;
 			}
-			if(bi.pause()){ // pause the interval
-				callback(bi.i);
+			if(typeof callback === 'undefined' || callback == null){
+				console.log("No callback function supplied for interrupt!");
+				return false;
+			}
+			if(bi.paused || bi.pause()){ // pause the interval
+				callback((bi.i-1));
 				bi.resume();
 				return true;
 			}
@@ -69,7 +73,7 @@
 		*/
 	
 		bi.blockingIntExists = function(){
-			if(typeof window.blockingInt !== 'undefined' || window.blockingInt != false){
+			if(typeof window.blockingInt !== 'undefined' && window.blockingInt != false){
 				return true;
 			}else{
 				return false
@@ -134,7 +138,7 @@
 			bi.paused = false;
 			bi.callback = null;
 			bi.period = 0;
-			bi.i = 0;
+			bi.i = 1;
 		}
 	}
 	return BlockingInterval;
