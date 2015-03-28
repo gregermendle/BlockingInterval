@@ -3,7 +3,9 @@ Javascript library that mimics setInterval but only allows one interval to be ex
 #Usage
 ---
 Create a new instance of blocking interval
-  var myInterval = new BlockingInterval();
+```javascript
+var myInterval = new BlockingInterval();
+```
 
 Now you can set your interval just like javascripts built in `setInterval(callback, period);`.  
 In blocking interval's version of setInterval, we pass the number of completed iterations `i` to your callback function. 
