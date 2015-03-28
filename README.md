@@ -33,6 +33,5 @@ myInterval.clearInterval();
 ```
 This will completely reset the blocking interval object back to its initial state.
 #To-do
- - clearBlockingInterval should return the original object. This is an easy fix.
  - A run time feature would be nice, to track the actual time that the interval has been running
  - Pass additional information to callbacks
