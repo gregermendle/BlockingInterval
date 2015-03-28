@@ -107,7 +107,7 @@ function BlockingInterval(){
 	/*
 		Clear current blocking interval
 	*/
-	bi.clearBlockingInterval = function(){
+	bi.clearInterval = function(){
 		if(bi.blockingIntExists()){
 			clearInterval(window.blockingInt);
 			bi.reset();
