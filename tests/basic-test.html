@@ -3,7 +3,29 @@
 	<head>
 	</head>
 	<body>
-	
-		<script src="../src/blockingInterval.js"></script>
+		<input id="pause" type="button" value="Pause" />
+		<input id="resume" type="button" value="Resume" />
+		<input id="clear-interval" type="button" value="Clear Interval" />
+		
+		<ul id="interval-list"></ul>
+		
+		<script type="text/javascript" src="../src/blockingInterval.js"></script>
+		<script type="text/javascript">
+			var myInterval = new BlockingInterval(); // Create a new blocking interval object
+			var myList = document.getElementById('interval-list'); // Grab our interval list element
+			
+			// Set our interval callback and period
+			myInterval.setInterval(function(i){ 
+				var newNode = document.createElement('li'); // Create a new list item element
+				newNode.innerHTML = 'iteration-'+i; // Put some text in it
+				myList.appendChild(newNode); // Add our element to our list
+			},1000); // run every second
+			
+			// Set the onclick actions for our Pause, Resume and Clear Interval buttons above
+			// *NOTE: Functions are wrapped in anonymous functions to prevent them from being executed
+			document.getElementById('pause').onclick = function(){myInterval.pause()};
+			document.getElementById('resume').onclick = function(){myInterval.resume()};
+			document.getElementById('clear-interval').onclick = function(){myInterval.clearInterval()};
+		</script>
 	</body>
 </html>
