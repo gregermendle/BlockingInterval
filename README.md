@@ -29,7 +29,7 @@ myInterval.interrupt(function(i){
 ```
 Finally, to clear your interval
 ```javascript
-myInterval.clearBlockingInterval();
+myInterval.clearInterval();
 ```
 This will completely reset the blocking interval object back to its initial state.
 #To-do
