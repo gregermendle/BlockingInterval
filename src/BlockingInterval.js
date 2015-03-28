@@ -1,5 +1,11 @@
 (function(){
 	BlockingInterval = function(){
+		/*
+			console.log fixes
+		*/
+		if(typeof console === 'undefined'){
+			console.log = function(){}; // no-op function for log
+		}
 	
 		var bi = this;
 
