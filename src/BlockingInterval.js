@@ -14,13 +14,13 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 */
-(function(){
-	BlockingInterval = function(){
+(function(window, document){
+	window.BlockingInterval = function(){
 		/*
 			console.log fixes
 		*/
 		if(typeof console === 'undefined'){
-			console.log = function(){}; // no-op function for log
+			window.console.log = function(){}; // no-op function for log
 		}
 	
 		var bi = this;
@@ -50,7 +50,7 @@
 		*/
 		bi.setInterval = function(callback, period){
 			if(typeof callback === 'undefined' || callback == null){
-				console.log("No callback function specified!");
+				window.console.log("No callback function specified!");
 				return false;
 			}
 			if(typeof window.blockingInt === 'undefined'){
@@ -65,7 +65,7 @@
 					}, bi.period);
 				return true;
 			}else{
-				console.log("A blocking interval is already running!");
+				window.console.log("A blocking interval is already running!");
 				return false;
 			}
 		}
@@ -76,11 +76,11 @@
 	
 		bi.interrupt = function(callback){
 			if(!bi.blockingIntExists()){
-				console.log("No blocking interval currently exists!");
+				window.console.log("No blocking interval currently exists!");
 				return false;
 			}
 			if(typeof callback === 'undefined' || callback == null){
-				console.log("No callback function supplied for interrupt!");
+				window.console.log("No callback function supplied for interrupt!");
 				return false;
 			}
 			if(bi.paused || bi.pause()){ // pause the interval
@@ -109,7 +109,7 @@
 		bi.pause = function(){
 			if(bi.blockingIntExists()){
 				if(bi.paused){
-					console.log("Blocking interval already paused!");
+					window.console.log("Blocking interval already paused!");
 					return false;
 				}
 				clearInterval(window.blockingInt);
@@ -117,7 +117,7 @@
 				bi.paused = true;
 				return true;
 			}else{
-				console.log('No blocking interval currently exists!');
+				window.console.log('No blocking interval currently exists!');
 				return false;
 			}
 		}
@@ -132,7 +132,7 @@
 				bi.paused = false;
 				return true;
 			}else{
-				console.log('No blocking interval is paused!');
+				window.console.log('No blocking interval is paused!');
 				return false;
 			}
 		}
@@ -146,7 +146,7 @@
 				bi.reset();
 				return true;
 			}else{
-				console.log("No blocking interval currently exists!");
+				window.console.log("No blocking interval currently exists!");
 				return false;
 			}
 		}
@@ -163,5 +163,4 @@
 			bi.i = 1;
 		}
 	}
-	return BlockingInterval;
-})();
+})(window, document);
