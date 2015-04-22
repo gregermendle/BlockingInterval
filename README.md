@@ -8,7 +8,7 @@ Javascript's setInterval function does not run in parallel, however setInterval 
 ---
 Include BlockingInterval.js into your html document
 ```html
-<script type="text/javascript" src="PATH TO/BlockingInterval.js"></script>
+<script type="text/javascript" src="BlockingInterval.min.js"></script>
 ```
 
 Create a new instance of blocking interval
