@@ -1,8 +1,5 @@
 # BlockingInterval
-Blocking Interval is a Javascript library that utilizes the operation of Javascript's built-in function setInterval to create and execute one interval at a time. 
-
-### Note:
-Javascript's setInterval function does not run in parallel, however setInterval functions can run one after another. This library simply allows one to create an interval that will run by itself. It also supplies tools for starting, stopping, pausing, and interrupting intervals.
+Blocking Interval utilizes the operation of Javascript's built-in function `setInterval` to create a mutually exclusive executing interval. This is not to suggest that setInterval is synchronous, this library merely provides a means for controlling and managing executing intervals.
 
 #Usage
 ---
