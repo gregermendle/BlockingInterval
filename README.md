@@ -1,5 +1,5 @@
 # BlockingInterval
-Blocking Interval utilizes the operation of Javascript's built-in function `setInterval` to create a mutually exclusive executing interval. This is not to suggest that setInterval is synchronous, this library merely provides a means for controlling and managing executing intervals.
+Blocking Interval utilizes the operation of Javascript's built-in function `setInterval` to create a mutually exclusive executing interval. This library merely provides a means for controlling and managing executing intervals.
 
 #Usage
 ---
