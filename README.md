@@ -43,4 +43,4 @@ This will completely reset the blocking interval object back to its initial stat
  - Pass additional information to callbacks
 
 #License
-GNU General Public License, V2
+MIT
