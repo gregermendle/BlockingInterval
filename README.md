@@ -23,7 +23,6 @@ myInterval.setInterval(function(i){
 You can pause and resume an interval as follows
 ```javascript
 myInterval.pause();
-/* other code here */
 myInterval.resume();
 ```
 A blocking interval can also be interrupted momentarily with a different callback function.  
