@@ -1,7 +1,7 @@
 # BlockingInterval
 Blocking Interval utilizes the operation of Javascript's built-in function `setInterval` to create a mutually exclusive executing interval. This library merely provides a means for controlling and managing executing intervals.
 
-#Usage
+# Usage
 ---
 Include BlockingInterval.js into your html document
 ```html
@@ -41,5 +41,5 @@ This will completely reset the blocking interval object back to its initial stat
  - A run time feature would be nice, to track the actual time that the interval has been running
  - Pass additional information to callbacks
 
-#License
+# License
 MIT
